@@ -372,6 +372,7 @@ open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelega
                 self.currentIndex = currentIndex
             }
         }
+
         guard let function = self.delegate?.pagerViewDidScroll else {
             return
         }
@@ -554,6 +555,7 @@ open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelega
             let item = (indexPath.item+1) % self.numberOfItems
             return self.collectionViewLayout.contentOffset(for: IndexPath(item: item, section: section))
         }()
+        
         self.collectionView.setContentOffset(contentOffset, animated: true)
     }
     
